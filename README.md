@@ -1,10 +1,14 @@
-# Lucky-Number
+# Random Number Generator
 
 A project created for generating lucky numbers. These can be used for a game, the lottery, etc.
 
-This was built using the following:
+## Demo
+![Random Number Generator](https://media.giphy.com/media/LmkfP7slhielwgmqAx/giphy.gif)
+
+Dependencies:
 Vue
 Vuetify
+Axios
 
 
 ## Project setup
