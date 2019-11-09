@@ -13,6 +13,7 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
         <v-list-item link :to="{name:'contact'}">
           <v-list-item-action>
             <v-icon>mdi-contact-mail</v-icon>
@@ -57,13 +58,16 @@
           <v-col class="text-center">
             
             <!-- About the application -->
-            <div class="random-quote" col="6" sm="6" md="6">
-              <i>{{ quote.content }}</i><br>
-              <i>~{{ quote.author }}</i>
-            </div>
-            <div class="instructions">
-              <p>Random numbers have many uses in science, art, statistics, cryptography, gaming, gambling, and other fields. For example, random assignment in randomized controlled trials helps scientists to test hypotheses, and random numbers or pseudorandom numbers help video games such as video poker.</p>
-              <p>Use this application as you wish.</p>
+            <div class="contact">
+                <h2>Contact Me Page</h2>
+                <a href="https://twitter.com/carltonstith" target="_blank">
+                <v-btn class="mx-2" fab dark large color="purple">
+                    <i class="fab fa-twitter"></i>
+                </v-btn>
+                </a>
+                <!-- <v-btn class="mx-2" fab dark large color="purple">
+                    <i class="fab fa-twitter"></i>
+                </v-btn> -->
             </div>
   
           </v-col>
@@ -80,32 +84,12 @@
 </template>
 
 <script>
-import axios from 'axios'
-  export default {
-    name: 'LuckyNumber',
-    props: {
-      source: String,
-    },
-
+export default {
+    name: 'Contact',
     data: () => ({
-      drawer: null,
-      quote: []
-    }),
-
-    mounted() {
-      axios
-        .get('https://api.quotable.io/random')
-        .then(response => (this.quote = response.data))
-    },
-
-    created: function() {
-      
-    },
-
-    methods: {
-      
-    },
-  }
+      drawer: null
+    })
+}
 </script>
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap');
@@ -116,46 +100,14 @@ h1, h3 {
 p {
   font-family: 'Roboto', sans-serif;
 }
+a {
+    text-decoration: none;
+}
 .logo {
   font-size:calc(20px + 0.8vw);
 }
-.random-quote {
-  margin: 20px 0;
-  width: 75%;
-    text-align: center;
-    display: inline-block;
+.fab.fa-twitter {
+    font-size: 1.8em;
 }
-.instructions {
-  margin: 20px 0;
-  width: 75%;
-    text-align: center;
-    display: inline-block;
-}
-.margin-top15 {
-  margin-top: 15px;
-}
-.margin-top20 {
-  margin-top: 20px;
-}
-.margin-bottom20 {
-  margin-bottom: 20px;
-}
-.blue-gradient {
-  background-color: #21D4FD;
-  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-}
-.purple {
-  background-color: #a61dfb;
-}
-.v-card:not(.v-sheet--tile):not(.v-card--shaped) {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-              0 2px 4px rgba(0,0,0,0.07), 
-              0 4px 8px rgba(0,0,0,0.07), 
-              0 8px 16px rgba(0,0,0,0.07),
-              0 16px 32px rgba(0,0,0,0.07), 
-              0 32px 64px rgba(0,0,0,0.07);
-}
-.v-btn.border-radius30 {
-  border-radius: 30px;
-}
+
 </style>

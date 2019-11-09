@@ -1,4 +1,11 @@
-# lucky-number
+# Lucky-Number
+
+A project created for generating lucky numbers. These can be used for a game, the lottery, etc.
+
+This was built using the following:
+Vue
+Vuetify
+
 
 ## Project setup
 ```

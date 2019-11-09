@@ -55,16 +55,54 @@
           justify="center"
         >
           <v-col class="text-center">
-            
-            <!-- About the application -->
-            <div class="random-quote" col="6" sm="6" md="6">
-              <i>{{ quote.content }}</i><br>
-              <i>~{{ quote.author }}</i>
+            <!-- Lucky Number Output -->
+            <v-card
+              class="mx-auto margin-bottom20"
+              max-width="344"
+              outlined
+            >
+            <div class="margin-top15">
+              <p id="randomNum">{{ number }}</p>
             </div>
-            <div class="instructions">
-              <p>Random numbers have many uses in science, art, statistics, cryptography, gaming, gambling, and other fields. For example, random assignment in randomized controlled trials helps scientists to test hypotheses, and random numbers or pseudorandom numbers help video games such as video poker.</p>
-              <p>Use this application as you wish.</p>
-            </div>
+
+              <v-list-item three-line>
+
+                <v-col cols="6" sm="6" md="6">
+                  <v-text-field
+                    label="Min"
+                    solo
+                    id="min" 
+                    v-model="min" 
+                    min="-9999999999" 
+                    max="9999999999" 
+                    type="number"
+                  ></v-text-field>
+                </v-col>
+
+                <v-col cols="6" sm="6" md="6">
+                  <v-text-field
+                    label="Max"
+                    solo
+                    id="max" 
+                    v-model="max" 
+                    min="-9999999999" 
+                    max="9999999999" 
+                    type="number"
+                  ></v-text-field>
+                </v-col>
+          
+              </v-list-item>
+          
+              <v-card-actions>
+                <v-btn text @click="handleSave()">Save</v-btn>
+                <v-btn text @click="handlePickAnotherNumber()">Pick Another Number</v-btn>
+              </v-card-actions>
+            </v-card>
+
+            <v-btn
+              class="margin-top20 border-radius30" 
+              @click="getInput"
+            >Generate a Random Number</v-btn>
   
           </v-col>
         </v-row>
@@ -80,7 +118,6 @@
 </template>
 
 <script>
-import axios from 'axios'
   export default {
     name: 'LuckyNumber',
     props: {
@@ -89,21 +126,58 @@ import axios from 'axios'
 
     data: () => ({
       drawer: null,
-      quote: []
+      min: '',
+      max: '',
+      number: 1
     }),
 
-    mounted() {
-      axios
-        .get('https://api.quotable.io/random')
-        .then(response => (this.quote = response.data))
-    },
-
     created: function() {
-      
+      this.getRandomNumber();
     },
 
     methods: {
-      
+      loadNum: function () {
+        this.min = 1;
+        this.max = 10;
+        this.getRandomNumber();
+      },
+
+      getInput: function () {
+        let min = Number(this.min)
+        let max = Number(this.max)
+        if(min > max) {
+          [min, max] = [max, min]
+        }
+        this.min = min
+        this.max = max
+        this.getRandomNumber()
+      },
+
+      getRandomNumber: function () {
+        this.number = this.generateNumber()
+      },
+
+      generateNumber: function () {
+        return Math.floor(Math.random()*(this.max-this.min+1)+this.min);
+      },
+
+      // Is this really needed? 
+      handleSave() {
+        console.log(this.number + ' was saved to local storage')
+      },
+
+      handlePickAnotherNumber() {
+        this.number = 0
+        this.min = ''
+        this.max = ''
+      }
+    },
+
+    watch: {
+      number(newNumber) {
+        localStorage.number = newNumber
+        console.log(localStorage.number = newNumber)
+      }
     },
   }
 </script>
@@ -116,21 +190,6 @@ h1, h3 {
 p {
   font-family: 'Roboto', sans-serif;
 }
-.logo {
-  font-size:calc(20px + 0.8vw);
-}
-.random-quote {
-  margin: 20px 0;
-  width: 75%;
-    text-align: center;
-    display: inline-block;
-}
-.instructions {
-  margin: 20px 0;
-  width: 75%;
-    text-align: center;
-    display: inline-block;
-}
 .margin-top15 {
   margin-top: 15px;
 }
@@ -139,6 +198,9 @@ p {
 }
 .margin-bottom20 {
   margin-bottom: 20px;
+}
+.logo {
+  font-size: calc(20px + 0.8vw);
 }
 .blue-gradient {
   background-color: #21D4FD;
