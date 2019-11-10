@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       app
     >
@@ -31,9 +31,9 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
 
-    <v-app-bar
+    <!-- <v-app-bar
       app
       color="indigo"
       dark
@@ -43,7 +43,7 @@
       <v-toolbar-title>
         <h1 class="logo">Lucky Number</h1>
       </v-toolbar-title>
-    </v-app-bar>
+    </v-app-bar> -->
 
     <v-content>
       <v-container
@@ -55,6 +55,9 @@
           justify="center"
         >
           <v-col class="text-center">
+            <v-toolbar-title class="margin-top40 margin-bottom40">
+              <h1 class="logo">Lucky Number</h1>
+            </v-toolbar-title>
             <!-- Lucky Number Output -->
             <v-card
               class="mx-auto margin-bottom20"
@@ -93,27 +96,28 @@
           
               </v-list-item>
           
-              <v-card-actions>
-                <v-btn text @click="handleSave()">Save</v-btn>
-                <v-btn text @click="handlePickAnotherNumber()">Pick Another Number</v-btn>
+              <v-card-actions class="margin-bottom15">
+                <!-- <v-btn text @click="handleSave()">Save</v-btn>
+                <v-btn text @click="handlePickAnotherNumber()">Pick Another Number</v-btn> -->
+                <v-btn
+                  class="margin-top20 border-radius30 randomNumberButton" 
+                  @click="getInput"
+                >Generate a Random Number</v-btn>
               </v-card-actions>
             </v-card>
 
-            <v-btn
+            <v-btn text @click="handleSave()">Save</v-btn>
+            <v-btn text @click="handlePickAnotherNumber()">Pick Another Number</v-btn> 
+
+            <!-- <v-btn
               class="margin-top20 border-radius30" 
               @click="getInput"
-            >Generate a Random Number</v-btn>
+            >Generate a Random Number</v-btn> -->
   
           </v-col>
         </v-row>
       </v-container>
     </v-content>
-    <v-footer
-      app
-      class="purple"
-    >
-      <span class="white--text">&copy; 2019 Carlton Stith for CeeJayS Media</span>
-    </v-footer>
   </v-app>
 </template>
 
@@ -183,9 +187,10 @@
 </script>
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap');
 
 h1, h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Bowlby One SC', cursive;
 }
 p {
   font-family: 'Roboto', sans-serif;
@@ -193,14 +198,27 @@ p {
 .margin-top15 {
   margin-top: 15px;
 }
+.margin-bottom15 {
+  margin-bottom: 15px;
+}
 .margin-top20 {
   margin-top: 20px;
 }
 .margin-bottom20 {
   margin-bottom: 20px;
 }
+.margin-top40 {
+  margin-top: 40px;
+}
+.margin-bottom40 {
+  margin-bottom: 40px;
+}
 .logo {
-  font-size: calc(20px + 0.8vw);
+  font-size: calc(35px + 0.8vw);
+  font-weight: 400;
+  text-shadow: 1px 1px 1px #000, 1px 1px 1px #3e3e3e;
+  color: #fff;
+  font-family: 'Bowlby One SC', cursive;
 }
 .blue-gradient {
   background-color: #21D4FD;
@@ -219,5 +237,16 @@ p {
 }
 .v-btn.border-radius30 {
   border-radius: 30px;
+}
+.randomNumberButton {
+  margin: 0 auto;
+  background: #21D4FD;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+.randomNumberButton>span {
+  color: white;
+  font-size: 1.22em;
+  font-weight: bold;
 }
 </style>

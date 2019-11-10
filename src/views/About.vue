@@ -70,12 +70,6 @@
         </v-row>
       </v-container>
     </v-content>
-    <v-footer
-      app
-      class="purple"
-    >
-      <span class="white--text">&copy; 2019 Carlton Stith for CeeJayS Media</span>
-    </v-footer>
   </v-app>
 </template>
 
@@ -122,14 +116,14 @@ p {
 .random-quote {
   margin: 20px 0;
   width: 75%;
-    text-align: center;
-    display: inline-block;
+  text-align: center;
+  display: inline-block;
 }
 .instructions {
   margin: 20px 0;
   width: 75%;
-    text-align: center;
-    display: inline-block;
+  text-align: center;
+  display: inline-block;
 }
 .margin-top15 {
   margin-top: 15px;

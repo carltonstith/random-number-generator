@@ -59,27 +59,18 @@
             
             <!-- About the application -->
             <div class="contact">
-                <h2>Contact Me Page</h2>
+                <h2>Issues</h2>
                 <a href="https://twitter.com/carltonstith" target="_blank">
                 <v-btn class="mx-2" fab dark large color="purple">
                     <i class="fab fa-twitter"></i>
                 </v-btn>
                 </a>
-                <!-- <v-btn class="mx-2" fab dark large color="purple">
-                    <i class="fab fa-twitter"></i>
-                </v-btn> -->
             </div>
   
           </v-col>
         </v-row>
       </v-container>
     </v-content>
-    <v-footer
-      app
-      class="purple"
-    >
-      <span class="white--text">&copy; 2019 Carlton Stith for CeeJayS Media</span>
-    </v-footer>
   </v-app>
 </template>
 
