@@ -3,7 +3,7 @@
 A project created for generating lucky numbers. These can be used for a game, the lottery, etc.
 
 ## Demo
-![Random Number Generator](https://media.giphy.com/media/LmkfP7slhielwgmqAx/giphy.gif)
+![Random Number Generator](https://media.giphy.com/media/d5wYZWuzrlcMJDhpJS/giphy.gif)
 
 Dependencies:
 Vue
