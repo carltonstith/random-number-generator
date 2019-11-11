@@ -109,6 +109,11 @@
             <v-btn text @click="handleSave()">Save</v-btn>
             <v-btn text @click="handlePickAnotherNumber()">Pick Another Number</v-btn> 
 
+            <div class="random-quote" col="6" sm="6" md="6">
+              <i>{{ quote.content }}</i><br>
+              <i>~{{ quote.author }}</i>
+            </div>
+
             <!-- <v-btn
               class="margin-top20 border-radius30" 
               @click="getInput"
@@ -122,6 +127,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
   export default {
     name: 'LuckyNumber',
     props: {
@@ -132,8 +139,15 @@
       drawer: null,
       min: '',
       max: '',
-      number: 1
+      number: 1,
+      quote: []
     }),
+
+    mounted() {
+      axios
+        .get('https://api.quotable.io/random')
+        .then(response => (this.quote = response.data))
+    },
 
     created: function() {
       this.getRandomNumber();
@@ -155,6 +169,10 @@
         this.min = min
         this.max = max
         this.getRandomNumber()
+
+        axios
+        .get('https://api.quotable.io/random')
+        .then(response => (this.quote = response.data))
       },
 
       getRandomNumber: function () {
@@ -248,5 +266,12 @@ p {
   color: white;
   font-size: 1.22em;
   font-weight: bold;
+}
+.random-quote {
+  margin: 20px 0;
+  width: 75%;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
 }
 </style>
