@@ -184,9 +184,9 @@ import axios from 'axios'
       },
 
       // Is this really needed? 
-      handleSave() {
-        console.log(this.number + ' was saved to local storage')
-      },
+      // handleSave() {
+      //   console.log(this.number + ' was saved to local storage')
+      // },
 
       handlePickAnotherNumber() {
         this.number = 0
@@ -196,10 +196,10 @@ import axios from 'axios'
     },
 
     watch: {
-      number(newNumber) {
-        localStorage.number = newNumber
-        console.log(localStorage.number = newNumber)
-      }
+      // number(newNumber) {
+      //   localStorage.number = newNumber
+      //   console.log(localStorage.number = newNumber)
+      // }
     },
   }
 </script>
