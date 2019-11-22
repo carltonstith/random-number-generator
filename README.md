@@ -10,7 +10,6 @@ Vue
 Vuetify
 Axios
 
-
 ## Project setup
 ```
 npm install
