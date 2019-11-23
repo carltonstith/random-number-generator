@@ -1,50 +1,5 @@
 <template>
   <v-app id="inspire">
-    <!-- <v-navigation-drawer
-      v-model="drawer"
-      app
-    >
-      <v-list dense>
-        <v-list-item link to="/">
-          <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link :to="{name:'contact'}">
-          <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Contact</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item link :to="{name:'about'}">
-          <v-list-item-action>
-            <v-icon>mdi-information-outline</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>About</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
-
-    <!-- <v-app-bar
-      app
-      color="indigo"
-      dark
-      class="blue-gradient"
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>
-        <h1 class="logo">Lucky Number</h1>
-      </v-toolbar-title>
-    </v-app-bar> -->
-
     <v-content>
       <v-container
         class="fill-height"
@@ -261,10 +216,7 @@ p {
   font-weight: bold;
 }
 .random-quote {
-  // margin: 20px 0;
-  // width: 75%;
   text-align: center;
-  // display: inline-block;
   color: #fff;
 }
 </style>
