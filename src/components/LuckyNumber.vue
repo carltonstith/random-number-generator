@@ -64,7 +64,7 @@
 
             <div class="random-quote" col="6" sm="6" md="6">
               <i>{{ quote.content }}</i><br>
-              <i>~{{ quote.author }}</i>
+              <i>~ {{ quote.author }}</i>
             </div>
   
           </v-col>
