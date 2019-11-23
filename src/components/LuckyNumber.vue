@@ -97,8 +97,6 @@
               </v-list-item>
           
               <v-card-actions class="margin-bottom15">
-                <!-- <v-btn text @click="handleSave()">Save</v-btn>
-                <v-btn text @click="handlePickAnotherNumber()">Pick Another Number</v-btn> -->
                 <v-btn
                   class="margin-top20 border-radius30 randomNumberButton" 
                   @click="getInput"
@@ -113,11 +111,6 @@
               <i>{{ quote.content }}</i><br>
               <i>~{{ quote.author }}</i>
             </div>
-
-            <!-- <v-btn
-              class="margin-top20 border-radius30" 
-              @click="getInput"
-            >Generate a Random Number</v-btn> -->
   
           </v-col>
         </v-row>
@@ -268,10 +261,10 @@ p {
   font-weight: bold;
 }
 .random-quote {
-  margin: 20px 0;
-  width: 75%;
+  // margin: 20px 0;
+  // width: 75%;
   text-align: center;
-  display: inline-block;
+  // display: inline-block;
   color: #fff;
 }
 </style>
